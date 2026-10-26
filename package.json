@@ -1,0 +1,13 @@
+{
+  "name": "cerbo-api-rate-limiter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "In-memory per-organization and per-endpoint rate limiting proof of concept",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": { "express": "^5.1.0" }
+}

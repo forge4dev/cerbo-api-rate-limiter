@@ -1,0 +1,32 @@
+{
+  "tiers": {
+    "standard": { "capacity": 100, "refillPeriodSeconds": 60 },
+    "premium": { "capacity": 500, "refillPeriodSeconds": 60 }
+  },
+  "organizations": {
+    "org-acme": { "tier": "standard" },
+    "org-globex": { "tier": "premium" },
+    "org-custom": {
+      "tier": "standard",
+      "limit": { "capacity": 200, "refillPeriodSeconds": 60 }
+    }
+  },
+  "endpoints": [
+    {
+      "id": "list-items",
+      "method": "GET",
+      "path": "/items",
+      "limit": { "capacity": 100, "refillPeriodSeconds": 60 }
+    },
+    {
+      "id": "create-item",
+      "method": "POST",
+      "path": "/items",
+      "limit": { "capacity": 20, "refillPeriodSeconds": 60 }
+    }
+  ],
+  "fallbacks": {
+    "read": { "capacity": 100, "refillPeriodSeconds": 60 },
+    "write": { "capacity": 20, "refillPeriodSeconds": 60 }
+  }
+}
